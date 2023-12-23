@@ -23,3 +23,29 @@ const outerfunction = (outer)=>{
 const newFunction = outerfunction("outer")
 
 newFunction('inner')
+
+
+//  example 
+
+const counterInit = ()=>{
+
+    let counter =0 
+
+    const counterInc = ()=>{
+        counter ++
+
+        console.log(counter)
+        return counter
+    }
+
+    return counterInc
+}
+
+const newCounter = counterInit()
+
+newCounter()
+newCounter()
+
+
+
+// lets solve the problem 
