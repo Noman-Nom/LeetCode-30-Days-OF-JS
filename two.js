@@ -6,3 +6,20 @@
 // High-order function
 // Pre-increment vs Post-increment
 
+
+//  first recall the concept of closure fuunction
+
+const outerfunction = (outer)=>{
+
+    const innerfunction = (inner)=>{
+
+       console.log(`this is from ${outer}`);
+       console.log(`this is from ${inner}`);
+    }
+
+    return innerfunction
+}
+
+const newFunction = outerfunction("outer")
+
+newFunction('inner')
