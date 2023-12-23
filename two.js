@@ -49,3 +49,28 @@ newCounter()
 
 
 // lets solve the problem 
+// Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc)
+
+
+const Initcounter = (n)=>{
+
+    let counter = n
+
+    console.log(counter)
+
+    const IncCounter = ()=>{
+        counter++ 
+       
+        return counter
+    }
+
+    return IncCounter
+
+
+
+} 
+
+const myCounter = Initcounter(3)
+console.log(myCounter())
+console.log(myCounter())
+console.log(myCounter())
