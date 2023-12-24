@@ -10,13 +10,36 @@ const mainFunction = (val)=>{
         tobe: function(anotherVal){
 
             if(val=== anotherVal){
-                console.log("True")
+                console.log(" tobe ,True")
             }
             else{
-                console.log("not true")
+                console.log(" tobe ,not true")
+            }
+
+        },
+        notTobe: function(anotherVal){
+
+            if(val!== anotherVal){
+                console.log(" notTobe , True")
+            }
+            else{
+                console.log(" notTobe , not true")
             }
 
         }
+
+        
     }
     
+}
+
+
+try {
+    
+    mainFunction(2).tobe(2)
+    mainFunction(2).notTobe(6)
+
+} catch (error) {
+    
+    console.log(error)
 }
