@@ -7,7 +7,7 @@
 const arr = [1,2,3,4,5,6,7,8,9]
 
 
-const customMap = (arr , fn)=>{
+const customFn = (arr , fn)=>{
 
     const transformedArray = []
 
@@ -26,6 +26,6 @@ const mappingFunction = (value , index)=>{
 
 
 
-const resultArray = customMap(arr , mappingFunction)
+const resultArray = customFn(arr , mappingFunction)
 
 console.log(resultArray)
