@@ -4,6 +4,7 @@
 // Please solve it without using the built-in Array.reduce method.
 // ................................. ///..........................
 
+
 // befor solving this problem first see what  is reduce in js 
 
 // ..............  ex#1 ..........
@@ -35,9 +36,32 @@ console.log(newArray)
 
 // ..............  ex#4 ..........
 
-const numbers2 = [50, 10, 20, 30, 40];
+const numbers2 = [ 10, 20, 30, 40, 50];
 const maxValue = numbers2.reduce((acc, currentVal) => {
   return acc > currentVal ? acc : currentVal;
 });
 
 console.log(maxValue);
+
+
+// .............. leetcode solution 
+
+const nums = [1,2,3,4,5,6,7,8,9]
+        const CustomReduce = (nums , fn , init)=>{
+            let result = init 
+
+            for (let i = 0; i < nums.length; i++) {
+               result = fn(result , nums[i])
+                
+            }
+            return result
+
+
+        }
+
+let initailValue = 0;
+
+        const reduceFunction = (acc, cv)=> acc + cv
+const result = CustomReduce(nums , reduceFunction ,initailValue)
+console.log("result", result)
+
