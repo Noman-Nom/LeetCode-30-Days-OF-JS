@@ -23,3 +23,11 @@ const mul = numbers.reduce((acc , currentVal,index  )=>{
 },1)
 console.log(mul)
 
+// Example 3: Flattening Arrays
+
+const nestedArray = [[1,2], [2,3], [4,5]]
+
+const newArray = nestedArray.reduce((acc , currentVal , index)=>{
+                return acc.concat(currentVal)    
+},[7,9])
+console.log(newArray)
