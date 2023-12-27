@@ -31,3 +31,13 @@ const newArray = nestedArray.reduce((acc , currentVal , index)=>{
                 return acc.concat(currentVal)    
 },[7,9])
 console.log(newArray)
+
+
+// ..............  ex#4 ..........
+
+const numbers2 = [50, 10, 20, 30, 40];
+const maxValue = numbers2.reduce((acc, currentVal) => {
+  return acc > currentVal ? acc : currentVal;
+});
+
+console.log(maxValue);
