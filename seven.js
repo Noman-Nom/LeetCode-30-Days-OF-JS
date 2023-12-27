@@ -7,11 +7,19 @@
 // befor solving this problem first see what  is reduce in js 
 
 // ..............  ex#1 ..........
-const numbers = [1,2,3,4,5,6]
-const sum = numbers.reduce((acc , currentVal)=>{
+// const numbers = [1,2,3,4,5,6]
+const numbers = [1,2,3,4]
+const sum = numbers.reduce((acc , currentVal,index)=>{
 
     return acc + currentVal
 
 })
-
 console.log(sum)
+
+// ..............  ex#2 ..........
+
+const mul = numbers.reduce((acc , currentVal,index  )=>{
+                return acc * currentVal 
+},1)
+console.log(mul)
+
