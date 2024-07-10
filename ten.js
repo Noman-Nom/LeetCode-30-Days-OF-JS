@@ -36,4 +36,19 @@ const isEven = (num)=>{
 
         const evenNumber = filterArray(isEven , arr)
 
-            console.log(evenNumber)
+            // console.log(evenNumber)
+
+// ,,,,,,,,,,,,,,,,,,,,,....
+           const CheckIsEven = (num)=>{
+                let predicateArr = []
+                    for (let i = 0; i < arr.length; i++) {
+                       const evenNum = arr[i] %2===0 
+                            predicateArr.push(evenNum)
+                        
+                    }
+
+                    return predicateArr
+           }
+
+           console.log(CheckIsEven(arr))
+            
