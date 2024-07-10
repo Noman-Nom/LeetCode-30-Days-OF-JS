@@ -94,3 +94,23 @@ const squareFunction = (num)=>{
         const getSquareResult = GetSquare(squareFunction , arr)
 
         console.log(getSquareResult)
+
+
+//         Problem 4: Compose Functions
+// Create a higher-order function compose that takes two functions f and g as arguments. The returned function should take an argument x and return f(g(x)).
+
+
+                const f = (x)=>{
+                                return x +2 
+                }
+                
+
+                const g = (x)=>{
+                                return x * 2
+                }
+                        const HOD = (x)=>{
+                                      return  f(g(x))
+                        }
+
+                        const result1 = HOD(3)
+                        console.log("result",result1)
