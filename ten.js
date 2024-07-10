@@ -14,7 +14,7 @@ const createMultiplier = ( a)=>{   // a = 2
 }
 
 const multiplyBy2 = createMultiplier(2)
-console.log(multiplyBy2(5))
+// console.log(multiplyBy2(5))
 
 
 
@@ -50,7 +50,7 @@ const isEven = (num)=>{
                     return predicateArr
            }
 
-           console.log(CheckIsEven(arr))
+        //    console.log(CheckIsEven(arr))
             
     const getEvenNum = (arr)=>{
 
@@ -68,4 +68,29 @@ const isEven = (num)=>{
         return predicateArr
     }
 
-    console.log(getEvenNum(arr))
+    // console.log(getEvenNum(arr))
+
+
+//     Problem 3: Apply Function to Array
+// Create a higher-order function applyFunctionToArray that takes a function and an array as arguments. The returned function should return a new array where the function is applied to each element of the array.
+
+
+const squareFunction = (num)=>{
+
+        return  num * num 
+}
+
+        const GetSquare = (sq  , arr)=>{
+
+                    let result =[]
+                    for (let i = 0; i < arr.length; i++) {
+                     result.push(sq(arr[i]))
+                        
+                    }
+
+                    return result
+        }
+
+        const getSquareResult = GetSquare(squareFunction , arr)
+
+        console.log(getSquareResult)
