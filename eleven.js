@@ -35,10 +35,10 @@ const add = (a,b )=>{
 
 const MemoizedAdd = memoizeAddition(add)
 
-console.log(MemoizedAdd(2, 3)); // Output: 5 (calculated)
-console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
-console.log(MemoizedAdd(3, 2)); // Output: 5 (calculated)
-console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
+// console.log(MemoizedAdd(2, 3)); // Output: 5 (calculated)
+// console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
+// console.log(MemoizedAdd(3, 2)); // Output: 5 (calculated)
+// console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
 
 
 //  firts solve basic factorial problem 
@@ -68,7 +68,7 @@ console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
         // }
 
         const GetFactorialResult = factorialOfN(5)
-        console.log("Fectroal is = ", GetFactorialResult)
+        // console.log("Fectroal is = ", GetFactorialResult)
 
 
         // implement using cache 
@@ -107,8 +107,8 @@ console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
         }
 
         const GetCachedFactorial = memoizedFactorial(factorialForMemoized)
+        // console.log("Memoized Factorial = ", GetCachedFactorial(5))
 
-        console.log("Memoized Factorial = ", GetCachedFactorial(5))
 
 
 
@@ -123,3 +123,54 @@ console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
 // sum accepts two integers a and b and returns a + b. Assume that if a value has already been cached for the arguments (b, a) where a != b, it cannot be used for the arguments (a, b). For example, if the arguments are (3, 2) and (2, 3), two separate calls should be made.
 // fib accepts a single integer n and returns 1 if n <= 1 or fib(n - 1) + fib(n - 2) otherwise.
 // factorial accepts a single integer n and returns 1 if n <= 1 or factorial(n - 1) * n otherwise.
+
+
+
+        const sum = (a,b)=>{
+                return a+b
+        }
+        const fib = (n)=>{
+                    if(n<=1) return 1
+                  return  fib(n-1) + fib (n-2)
+        }
+        const factorial = (n)=>{
+                 if(n<=1) return 1
+                 return factorial(n - 1) * n
+        }
+
+        const memoize = (fn)=>{
+                let cache = new Map
+
+               return function(...args){
+
+                let key = JSON.stringify(args)
+                if(cache.has(key)){
+
+                    return cache.get(key)
+                }
+                let result = fn(...args)
+                cache.set(key, result)
+ 
+                return result
+               }
+
+
+
+        }
+
+        // testcases 
+        // Example usage with sum function
+const memoizedSum = memoize(sum);
+console.log(memoizedSum(2, 2)); // Output: 4
+console.log(memoizedSum(2, 2)); // Output: 4 (cached)
+// console.log(memoizedSum.getCallCount()); // Output: 1
+
+const memoizeFactorial = memoize(factorial);
+console.log(memoizeFactorial(2)); // Output: 2
+console.log(memoizeFactorial(3)); // Output: 6
+console.log(memoizeFactorial(2)); // Output: 2 (cached)
+// console.log(memoizeFactorial.getCallCount()); // Output: 2
+
+const memoizedFib = memoize(fib);
+console.log(memoizedFib(5)); // Output: 8
+// console.log(memoizedFib.getCallCount()); // Output: 1
