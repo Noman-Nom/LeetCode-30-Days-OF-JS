@@ -39,3 +39,22 @@ console.log(MemoizedAdd(2, 3)); // Output: 5 (calculated)
 console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
 console.log(MemoizedAdd(3, 2)); // Output: 5 (calculated)
 console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
+
+
+//  firts solve basic factorial problem 
+
+        const factorialOfN = (n)=>{
+
+            if(n<1) return -1
+            let result = 1
+            for (let i = 1; i <=n; i++) {
+                result = result * i
+                
+            }
+            return result
+
+        }
+
+
+        const GetFactorialResult = factorialOfN(5)
+        console.log("Fectroal is = ", GetFactorialResult)
