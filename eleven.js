@@ -12,7 +12,7 @@
 
 
 
-const memoize = (fn)=>{
+const memoizeAddition = (fn)=>{
         let cache = new Map
         return function(...args){
 
@@ -33,7 +33,7 @@ const add = (a,b )=>{
     return a+b
 }
 
-const MemoizedAdd = memoize(add)
+const MemoizedAdd = memoizeAddition(add)
 
 console.log(MemoizedAdd(2, 3)); // Output: 5 (calculated)
 console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
@@ -55,6 +55,57 @@ console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
 
         }
 
+   // const factorialOfN = (n)=>{
+
+        //     if(n<1) return -1
+        //     let result = 1
+        //     for (let i = n; i >0; i--) {
+        //         result = result * i
+                
+        //     }
+        //     return result
+
+        // }
 
         const GetFactorialResult = factorialOfN(5)
         console.log("Fectroal is = ", GetFactorialResult)
+
+
+        // implement using cache 
+
+
+        const memoizedFactorial = (fn) => {
+
+
+            let cache = new Map()
+            return function(...args){
+                const key = JSON.stringify(args)
+                if(cache.has(key)){
+                    return cache.get(key)
+
+                }
+
+                const result = fn(...args)
+
+                cache.set(key, result)
+                return result
+            }
+
+
+        }
+
+        const factorialForMemoized = (n)=>{
+
+           
+            if(n<1) return -1
+            let result = 1
+            for (let i = 1; i <=n; i++) {
+                result = result * i
+                
+            }
+            return result
+        }
+
+        const GetCachedFactorial = memoizedFactorial(factorialForMemoized)
+
+        console.log("Memoized Factorial = ", GetCachedFactorial(5))
