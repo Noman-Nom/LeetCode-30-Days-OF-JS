@@ -35,5 +35,7 @@ const add = (a,b )=>{
 
 const MemoizedAdd = memoize(add)
 
-
-console.log("final-output",MemoizedAdd(2,2))
+console.log(MemoizedAdd(2, 3)); // Output: 5 (calculated)
+console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
+console.log(MemoizedAdd(3, 2)); // Output: 5 (calculated)
+console.log(MemoizedAdd(2, 3)); // Output: 5 (cached)
